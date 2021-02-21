@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>画像を黒塗りに加工しよう</title>
+    <meta name="description" content="画像ファイルをアップロードして黒塗りに加工するサイトです。始点と終点をクリックしたその領域が黒で上書きされます。サーバにアップしないのでとっても安全です。" />
+    <meta name="keywords" content="画像加工,黒塗り,塗り潰し,写真加工" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row border border-primary">
+            <div class="col-xs-12 col-md-3">
+                    <img class="mt-5" src="sample.png" alt="サンプル画像">
+                    <p>始点と終点をクリックして画像を加工しよう。選択した部分が黒塗りになります</p>
+                    <p>スマホからでも使えるサイトです。</p>
+                    <p>JavaScriptで作っているのでファイルをサーバに送っているわけではありませんのでとっても安全</p>
+                    <p>我ながらレイアウトがあれですが機能重視ということで・・・</p>
+                    <p>先ずは加工したい画像ファイルを選択して→始点と終点をクリックして加工、<br>
+                        その後はダウンロードボタンを押せば完了。</p>
+                    </div>
+
+            <div class="box col-xs-12 col-md-6 wrapper">
+                <input id="file" type="file">
+                <a id="download" download="sample.jpg"></a>
+
+                <div class="wrapper">
+                    <canvas id="screen_image"></canvas>
+                    <!-- .wrapper // -->
+                </div>
+                <style>
+                    body{
+                        height:100%;
+                        background: #eee;
+                        padding: 10px;
+                    }
+                    .wrapper{
+                    width: 100%;
+                    height: 100%;
+                    margin-top:10px;
+                    }
+                    .box{
+                        padding: 15px;
+                    }
+                </style>
+                <input id="btn1" type="button" class="btn btn-primary" value="ダウンロード">
+            </div>
+            <div class="box col-xs-12 col-md-3">
+            </div>
+        </div>
+    </div>
+    <script src="developing_pic_draw.js"></script>
+</body>
+</html>
